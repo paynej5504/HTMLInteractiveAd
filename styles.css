@@ -1,0 +1,93 @@
+/* sets container style */
+.container {
+    width: 300px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+    
+}
+
+/* sets style for images */
+.container .img {
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: img 10s ease-in-out 0s;
+    
+}
+
+/* the image that will be shown when the animation is done */
+.container #img1 {
+    background-image: url("mack5.JPG");
+}
+
+
+/* changes images at different frames */
+@keyframes img {
+    0% { background-image: url("mack1.jpg"); }
+    50% { background-image: url("mack2.JPG"); }
+    100% {background-image: url("mack4.JPG");}
+}
+
+
+
+.animation-text-slide {
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(to left, #0000 38%, #000 40%);
+  -webkit-mask-size: 300%;
+}
+
+/* controls the text that is coming into view */
+.animation-text-slide.animate-in {
+  animation-name: text-slide; /* name for keyframes animation */
+  animation-duration: 10s; /* time of animation */
+  animation-timing-function: linear; /* plays with same speed from beginning to end */
+  animation-iteration-count: 1; /* only plays once */
+}
+
+@keyframes text-slide {
+  0% {
+    opacity: 1; /*shows text*/
+    -webkit-mask-position: 100%;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-mask-position: 0%;
+    
+  }
+}
+
+
+.container #ani {
+  color:darkblue;
+  font-size: 40px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  -webkit-text-stroke: 1px seashell; /* width and color of stroke */
+}
+
+/* styles the button */
+.container #button {
+    border-color: lightblue;
+    color: darkblue;
+    box-shadow: 0 0 40px 40px lightblue inset, 0 0 0 0 lightblue;
+    transition: all 150ms ease-in-out;
+    position: relative;
+    cursor: pointer;
+    height:30px;
+    margin: -20px -50px;
+    width: 100px;
+    top: 50%;
+    left:50%;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 20px;
+}
+
+/* when you hover over the button a shadow will appear */
+.container #button:hover {
+    box-shadow: 0 0 10px 0 lightblue inset, 0 0 10px 4px lightblue;
+}
+
